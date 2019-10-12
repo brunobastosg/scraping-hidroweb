@@ -41,7 +41,15 @@ def exibir_pagina(numeroPagina):
     driver.find_element_by_link_text(str(numeroPagina)).click()
 
 def baixar_arquivo():
-    driver.find_element_by_id('form:fsListaEstacoes:fsListaEstacoesC:btBaixar').click()
+    baixou = False
+    while not baixou:
+        try:
+            driver.find_element_by_id('form:fsListaEstacoes:fsListaEstacoesC:btBaixar').click()
+            baixou = True
+        except selenium.common.exceptions.ElementClickInterceptedException:
+            time.sleep(5)
+            pass
+
 
 def selecionar_tipo_arquivo_csv():
     driver.find_elements_by_css_selector('input[type="radio"]')[2].send_keys(webdriver.common.keys.Keys.SPACE)
