@@ -106,19 +106,19 @@ def obter_botao_ultima_pagina():
 def ir_para_pagina(numero_pagina):
     achou = False
     while (not achou):
-        link_pagina = obter_link_pagina(numero_pagina)
-        if (link_pagina == None):
-            clicar_ultima_pagina_visivel()
-            aguardar_loading()
-        else:
+        try:
+            link_pagina = obter_link_pagina(numero_pagina)
             achou = True
             link_pagina.click()
+        except selenium.common.exceptions.NoSuchElementException:
+            clicar_ultima_pagina_visivel()
+            aguardar_loading()
 
 def clicar_ultima_pagina_visivel():
     obter_ultima_pagina_visivel().click()
 
 def obter_ultima_pagina_visivel():
-    return driver.find_element_by_css_selector('ul.pagination li:nth-last-child(2)')
+    return driver.find_element_by_css_selector('ul.pagination li:nth-last-child(2) a')
 
 def scrape():
     abrir_site()
