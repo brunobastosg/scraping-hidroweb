@@ -12,8 +12,9 @@ SHORT_TIMEOUT  = 5
 LONG_TIMEOUT = 30
 LOADING_ELEMENT_XPATH = '//div[@class="loading"]'
 
+FILE_NAME = 'downloaded.txt'
+
 ITENS_POR_PAGINA = 5
-ULTIMA_PAGINA = 7238
 
 CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER')
 
@@ -37,8 +38,11 @@ def selecionar_estacoes():
 def selecionar_estacao(indice):
     driver.find_elements_by_css_selector('input[type="checkbox"]')[indice].send_keys(webdriver.common.keys.Keys.SPACE)
 
-def exibir_pagina(numeroPagina):
-    driver.find_element_by_link_text(str(numeroPagina)).click()
+def exibir_pagina(numero_pagina):
+    obter_link_pagina(numero_pagina).click()
+
+def obter_link_pagina(numero_pagina):
+    return driver.find_element_by_link_text(str(numero_pagina))
 
 def baixar_arquivo():
     baixou = False
@@ -68,10 +72,53 @@ def aguardar_loading():
 def clicar_aba_dados_convencionais():
     driver.find_element_by_css_selector('a[href="#dadosConvencionais"]').click()
 
-def processar_pagina(indice_proxima_pagina):
+def processar_pagina(numero_pagina):
     selecionar_estacoes()
-    exibir_pagina(indice_proxima_pagina)
-    return indice_proxima_pagina + 1
+    gravar_ultima_pagina_processada(numero_pagina)
+    exibir_pagina(numero_pagina + 1)
+
+def verificar_ultima_pagina_processada():
+    try:
+        with open(FILE_NAME, 'r') as reader:
+            line = int(reader.readline())
+    except FileNotFoundError:
+        line = 1
+    return line
+
+def gravar_ultima_pagina_processada(numero_pagina):
+    with open(FILE_NAME, 'w') as writer:
+        writer.write(str(numero_pagina))
+
+def obter_indice_ultima_pagina():
+    obter_botao_ultima_pagina().click()
+    aguardar_loading()
+    indice_ultima_pagina = int(driver.find_element_by_css_selector('ul.pagination li.active a').text)
+    obter_botao_primeira_pagina().click()
+    aguardar_loading()
+    return indice_ultima_pagina
+
+def obter_botao_primeira_pagina():
+    return driver.find_element_by_xpath('//*[@id="form:fsListaEstacoes:fsListaEstacoesC:j_idt179:paginator:pagFirst"]')
+
+def obter_botao_ultima_pagina():
+    return driver.find_element_by_xpath('//*[@id="form:fsListaEstacoes:fsListaEstacoesC:j_idt179:paginator:pagLast"]')
+
+def ir_para_pagina(numero_pagina):
+    achou = False
+    while (not achou):
+        link_pagina = obter_link_pagina(numero_pagina)
+        if (link_pagina == None):
+            clicar_ultima_pagina_visivel()
+            aguardar_loading()
+        else:
+            achou = True
+            link_pagina.click()
+
+def clicar_ultima_pagina_visivel():
+    obter_ultima_pagina_visivel().click()
+
+def obter_ultima_pagina_visivel():
+    return driver.find_element_by_css_selector('ul.pagination li:nth-last-child(2)')
 
 def scrape():
     abrir_site()
@@ -86,9 +133,14 @@ def scrape():
 
     aguardar_loading()
 
-    i = processar_pagina(2)
+    ultima_pagina_processada = verificar_ultima_pagina_processada()
 
-    while i < ULTIMA_PAGINA:
-        i = processar_pagina(i)
+    indice_ultima_pagina = obter_indice_ultima_pagina()
+
+    if (ultima_pagina_processada > 1):
+        ir_para_pagina(ultima_pagina_processada)
+
+    for i in range(ultima_pagina_processada, indice_ultima_pagina + 1):
+        processar_pagina(i)
 
 scrape()
