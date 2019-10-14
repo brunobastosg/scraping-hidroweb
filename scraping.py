@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support.ui import Select
 import selenium
 import os
 import time
@@ -14,7 +15,7 @@ LOADING_ELEMENT_XPATH = '//div[@class="loading"]'
 
 FILE_NAME = 'downloaded.txt'
 
-ITENS_POR_PAGINA = 5
+ITENS_POR_PAGINA = 20
 
 CHROMEDRIVER_PATH = os.environ.get('CHROMEDRIVER')
 
@@ -28,6 +29,12 @@ def clicar_botao_consultar():
 
 def obter_botao_consultar():
     return driver.find_element_by_id('form:fsListaEstacoes:bt')
+
+def selecionar_quantidade_itens_por_pagina():
+    select = Select(driver.find_element_by_id('form:fsListaEstacoes:fsListaEstacoesC:j_idt180:pageSizeSelect'))
+    select.select_by_visible_text(str(ITENS_POR_PAGINA))
+    driver.find_element_by_id('form:fsListaEstacoes:fsListaEstacoesC:j_idt180:pageSizeDefine').click()
+    aguardar_loading()
 
 def selecionar_estacoes():
     for i in range(0, ITENS_POR_PAGINA):
@@ -98,10 +105,10 @@ def obter_indice_ultima_pagina():
     return indice_ultima_pagina
 
 def obter_botao_primeira_pagina():
-    return driver.find_element_by_xpath('//*[@id="form:fsListaEstacoes:fsListaEstacoesC:j_idt179:paginator:pagFirst"]')
+    return driver.find_element_by_css_selector('ul.pagination li:first-child a')
 
 def obter_botao_ultima_pagina():
-    return driver.find_element_by_xpath('//*[@id="form:fsListaEstacoes:fsListaEstacoesC:j_idt179:paginator:pagLast"]')
+    return driver.find_element_by_css_selector('ul.pagination li:last-child a')
 
 def ir_para_pagina(numero_pagina):
     achou = False
@@ -128,6 +135,8 @@ def scrape():
     aguardar_loading()
 
     clicar_aba_dados_convencionais()
+
+    selecionar_quantidade_itens_por_pagina()
 
     selecionar_tipo_arquivo_csv()
 
