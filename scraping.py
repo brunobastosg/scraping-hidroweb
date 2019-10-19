@@ -31,9 +31,9 @@ def obter_botao_consultar():
     return driver.find_element_by_id('form:fsListaEstacoes:bt')
 
 def selecionar_quantidade_itens_por_pagina():
-    select = Select(driver.find_element_by_id('form:fsListaEstacoes:fsListaEstacoesC:j_idt180:pageSizeSelect'))
+    select = Select(driver.find_element_by_css_selector('span[id="form:fsListaEstacoes:fsListaEstacoesC:estacoes"] select'))
     select.select_by_visible_text(str(ITENS_POR_PAGINA))
-    driver.find_element_by_id('form:fsListaEstacoes:fsListaEstacoesC:j_idt180:pageSizeDefine').click()
+    driver.find_element_by_css_selector('span[id="form:fsListaEstacoes:fsListaEstacoesC:estacoes"] a').click()
     aguardar_loading()
 
 def selecionar_estacoes():
@@ -110,7 +110,11 @@ def obter_botao_primeira_pagina():
 def obter_botao_ultima_pagina():
     return driver.find_element_by_css_selector('ul.pagination li:last-child a')
 
-def ir_para_pagina(numero_pagina):
+def ir_para_pagina(numero_pagina, indice_ultima_pagina):
+    busca_reversa = (indice_ultima_pagina - numero_pagina) < (numero_pagina - 1)
+    if (busca_reversa):
+        obter_botao_ultima_pagina().click()
+        aguardar_loading()
     achou = False
     while (not achou):
         try:
@@ -118,8 +122,14 @@ def ir_para_pagina(numero_pagina):
             achou = True
             link_pagina.click()
         except selenium.common.exceptions.NoSuchElementException:
-            clicar_ultima_pagina_visivel()
+            clicar_primeira_pagina_visivel() if busca_reversa else clicar_ultima_pagina_visivel()
             aguardar_loading()
+
+def clicar_primeira_pagina_visivel():
+    obter_primeira_pagina_visivel().click()
+
+def obter_primeira_pagina_visivel():
+    return driver.find_element_by_css_selector('ul.pagination li:nth-child(2) a')
 
 def clicar_ultima_pagina_visivel():
     obter_ultima_pagina_visivel().click()
@@ -147,7 +157,7 @@ def scrape():
     indice_ultima_pagina = obter_indice_ultima_pagina()
 
     if (ultima_pagina_processada > 1):
-        ir_para_pagina(ultima_pagina_processada)
+        ir_para_pagina(ultima_pagina_processada, indice_ultima_pagina)
 
     for i in range(ultima_pagina_processada, indice_ultima_pagina + 1):
         processar_pagina(i)
