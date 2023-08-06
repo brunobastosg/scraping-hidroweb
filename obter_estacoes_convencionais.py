@@ -10,7 +10,7 @@ total_paginas = None
 
 dados = []
 
-response = requests.get(URL + '?size={}&page={}'.format(TAMANHO_PAGINA, pagina_atual))
+response = requests.get(f'{URL}?size={TAMANHO_PAGINA}&page={pagina_atual}')
 
 if response.status_code == 200:
     retorno = json.loads(response.content.decode('utf-8'))
@@ -20,8 +20,8 @@ else:
 
 with open('ids_estacoes_convencionais.txt', 'a') as ids_file:
     while pagina_atual <= total_paginas:
-        print('Obtendo página {} de {}...'.format(pagina_atual, total_paginas))
-        response = requests.get(URL + '?size={}&page={}'.format(TAMANHO_PAGINA, pagina_atual))
+        print(f'Obtendo página {pagina_atual} de {total_paginas}...')
+        response = requests.get(f'{URL}?size={TAMANHO_PAGINA}&page={pagina_atual}')
         if response.status_code == 200:
             retorno = json.loads(response.content.decode('utf-8'))
             dados += retorno['content']
@@ -29,7 +29,7 @@ with open('ids_estacoes_convencionais.txt', 'a') as ids_file:
                 ids_file.write(str(estacao['id']) + '\n')
             pagina_atual = pagina_atual + 1
         else:
-            raise Exception('Erro ao obter a página {} dos dados de estações convencionais'.format(pagina_atual))
+            raise Exception(f'Erro ao obter a página {pagina_atual} dos dados de estações convencionais')
 
 with open('estacoes_convencionais.json', 'w') as json_file:
-     json.dump(dados, json_file)
+    json.dump(dados, json_file)
