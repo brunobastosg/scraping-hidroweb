@@ -1,5 +1,14 @@
 import json
+import random
 import requests
+
+with open('user-agents.txt', 'r') as user_agents_file:
+    user_agents = [line.strip() for line in user_agents_file]
+
+random_user_agent = random.choice(user_agents)
+headers = {
+    'User-Agent': random_user_agent
+}
 
 TAMANHO_PAGINA = 100
 URL = 'http://www.snirh.gov.br/hidroweb/rest/api/dadosHistoricos'
@@ -10,7 +19,7 @@ total_paginas = None
 
 dados = []
 
-response = requests.get(f'{URL}?size={TAMANHO_PAGINA}&page={pagina_atual}')
+response = requests.get(f'{URL}?size={TAMANHO_PAGINA}&page={pagina_atual}', headers=headers)
 
 if response.status_code == 200:
     retorno = json.loads(response.content.decode('utf-8'))
@@ -21,7 +30,7 @@ else:
 with open('ids_estacoes_convencionais.txt', 'a') as ids_file:
     while pagina_atual <= total_paginas:
         print(f'Obtendo página {pagina_atual} de {total_paginas}...')
-        response = requests.get(f'{URL}?size={TAMANHO_PAGINA}&page={pagina_atual}')
+        response = requests.get(f'{URL}?size={TAMANHO_PAGINA}&page={pagina_atual}', headers=headers)
         if response.status_code == 200:
             retorno = json.loads(response.content.decode('utf-8'))
             dados += retorno['content']

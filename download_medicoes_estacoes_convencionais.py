@@ -1,6 +1,15 @@
+import random
 import requests
 
 from pathlib import Path
+
+with open('user-agents.txt', 'r') as user_agents_file:
+    user_agents = [line.strip() for line in user_agents_file]
+
+random_user_agent = random.choice(user_agents)
+headers = {
+    'User-Agent': random_user_agent
+}
 
 URL = 'http://www.snirh.gov.br/hidroweb/rest/api/documento/convencionais'
 TIPO = 3
@@ -25,7 +34,7 @@ while fim_bloco < tamanho - 1:
     print(f'Processando bloco {inicio_bloco} a {fim_bloco} de {tamanho}...')
     bloco_ids = ids_documentos[inicio_bloco:fim_bloco]
     documentos = ','.join(bloco_ids)
-    response = requests.get(f'{URL}?tipo={TIPO}&documentos={documentos}')
+    response = requests.get(f'{URL}?tipo={TIPO}&documentos={documentos}', headers=headers)
     if response.status_code == 200:
         if (len(response.content) == 0):
             print('Response vazio. Ignorando...')
