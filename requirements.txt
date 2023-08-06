@@ -1,2 +1,3 @@
-selenium
-pandas
+pandas==2.0.3
+pyodbc==4.0.39
+requests==2.31.0

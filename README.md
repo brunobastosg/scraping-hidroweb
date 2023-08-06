@@ -6,22 +6,18 @@ O Portal HidroWeb é uma ferramenta integrante do Sistema Nacional de Informaç�
 
 O objetivo deste script é efetuar o download das séries históricas de todas as estações convencionais, tanto pluviométricas quanto fluviométricas.
 
-> OBS: A construção do script está em andamento e ele pode não funcionar corretamente.
-
 ## Requisitos
 
-* Python 3 (obrigatório)
+* Python 3.9 (obrigatório)
 * [pip](https://pypi.org/project/pip/) (desejável)
-* [virtualenv](https://virtualenv.pypa.io/en/latest/) (desejável)
+* Driver do MS Access (https://www.microsoft.com/en-US/download/details.aspx?id=13255)
 
 ## Configuração
 
 1. Clone o repositório;
-2. Na pasta do repositório, execute `virtualenv --python=/path/to/python3 .` (substituir `/path/to/python3` pelo caminho de sua instalação do Python 3);
-3. Em seguida, execute `bin/pip install -r requirements.txt`.
+2. Na pasta do repositório, execute `python -m venv .venv`;
+3. Em seguida, execute `.venv/bin/pip install -r requirements.txt` (se estiver no Linux ou Mac) ou `.venv/Scripts/pip install -r requirements` (se estiver no Windows).
 
 ## Execução
 
-É necessário definir a variável de ambiente `CHROMEDRIVER`, com a localização do [ChromeDriver](https://chromedriver.chromium.org/downloads), ao executar o script.
-
-Na pasta do projeto, digite `CHROMEDRIVER=/path/to/chromedriver bin/python scraping.py` e aguarde (vai demorar algumas horas).
+Falta fazer.
