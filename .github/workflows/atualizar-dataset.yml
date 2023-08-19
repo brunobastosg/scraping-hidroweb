@@ -20,6 +20,8 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
       - run: pip install -r requirements.txt
+      - name: instalar driver do microsoft access
+        run: choco install msaccess2016redist -y
       - run: python download_dados_dominio.py
       - name: salvar arquivos csv como artefatos
         uses: actions/upload-artifact@v3
