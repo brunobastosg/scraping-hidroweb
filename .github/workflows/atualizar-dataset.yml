@@ -1,0 +1,113 @@
+name: atualizar-dataset
+run-name: Atualizar Dataset
+on: [push]
+  # schedule:
+  #   - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
+
+env:
+  PYTHON_VERSION: '3.9'
+
+jobs:
+  obter-dominios:
+    # deve rodar no windows pois precisa do driver do ms access
+    runs-on: windows-latest
+    steps:
+      - name: baixar código-fonte
+        uses: actions/checkout@v3
+      - name: configurar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: python download_dados_dominio.py
+      - name: salvar arquivos csv como artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: dominio
+          path: dominio/*.csv
+
+  obter-estacoes-convencionais:
+    runs-on: ubuntu-latest
+    steps:
+      - name: baixar código-fonte
+        uses: actions/checkout@v3
+      - name: configurar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+      - run: pip install -r requirements.txt
+      - run: python obter_estacoes_convencionais.py
+      - name: salvar arquivos csv como artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: estacoes-convencionais
+          path: ids_estacoes_convencionais.txt
+
+  download-medicoes-estacoes-convencionais:
+    needs: obter-estacoes-convencionais
+    runs-on: ubuntu-latest
+    steps:
+      - name: baixar código-fonte
+        uses: actions/checkout@v3
+      - name: obter arquivos csv dos artefatos
+        uses: actions/download-artifact@v3
+        with:
+          name: estacoes-convencionais
+      - name: configurar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install -r requirements.txt
+      - run: python download_medicoes_estacoes_convencionais.py
+      - name: salvar arquivos zip como artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: medicoes-estacoes-convencionais
+          path: downloads
+
+  extrair-medicoes-estacoes-convencionais:
+    needs: download-medicoes-estacoes-convencionais
+    runs-on: ubuntu-latest
+    steps:
+      - name: baixar código-fonte
+        uses: actions/checkout@v3
+      - name: obter arquivos zip dos artefatos
+        uses: actions/download-artifact@v3
+        with:
+          name: medicoes-estacoes-convencionais
+          path: downloads
+      - name: configurar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: python extrair_medicoes_estacoes_convencionais.py -i downloads -o1 primeira-extracao -o2 segunda-extracao
+      - name: salvar arquivos csv como artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: segunda-extracao
+          path: segunda-extracao
+
+  concatenar-medicoes-estacoes-convencionais:
+    needs: extrair-medicoes-estacoes-convencionais
+    runs-on: ubuntu-latest
+    steps:
+      - name: baixar código-fonte
+        uses: actions/checkout@v3
+      - name: obter arquivos csv dos artefatos
+        uses: actions/download-artifact@v3
+        with:
+          name: medicoes-estacoes-convencionais
+          path: segunda-extracao
+      - name: configurar python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install -r requirements.txt
+      - run: python concatenar_medicoes_estacoes_convencionais.py -i segunda-extracao
+      - name: salvar arquivos csv como artefatos
+        uses: actions/upload-artifact@v3
+        with:
+          name: csvs-concatenados
+          path: csvs-concatenados
