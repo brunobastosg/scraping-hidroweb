@@ -1,0 +1,18 @@
+{
+  "title": "Dados hidrometeorol\u00f3gicos do Brasil",
+  "subtitle": "N\u00edveis fluviais, vaz\u00f5es, chuvas, climatologia, qualidade da \u00e1gua e sedimentos.",
+  "description": "### Contexto\n\nAo procurar dados referentes \u00e0s chuvas no Brasil, encontrei [este link](https://www.researchgate.net/post/Need_Brazil_Rainfall_data_daily_frequency), o que me levou ao [Portal Hidroweb](http://www.snirh.gov.br/hidroweb/publico/apresentacao.jsf), onde os dados se encontram.\n\n### Como os dados foram obtidos\n\nO Portal Hidroweb n\u00e3o disponibiliza uma forma f\u00e1cil de baixar os dados da esta\u00e7\u00f5es fluviom\u00e9tricas e pluviom\u00e9tricas, portanto foi necess\u00e1rio escrever scripts Python para efetuar o download dos dados de cada uma das mais de 35.000 esta\u00e7\u00f5es. O c\u00f3digo est\u00e1 dispon\u00edvel [aqui](https://github.com/brunobastosg/scraping-hidroweb).\n\n### Conte\u00fado\n\nOs dados referem-se a n\u00edveis fluviais, vaz\u00f5es, chuvas, climatologia, qualidade da \u00e1gua e sedimentos. Mais detalhes ser\u00e3o fornecidos posteriormente.",
+  "id": "brunobastosg/dados-hidrometeorolgicos-do-brasil",
+  "licenses": [
+    {
+      "nameNullable": "CC0-1.0",
+      "name": "CC0-1.0",
+      "hasName": true
+    }
+  ],
+  "keywords": [
+    "brazil",
+    "weather and climate",
+    "portuguese"
+  ]
+}
