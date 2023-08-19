@@ -1,33 +1,38 @@
-from argparse import ArgumentParser
-from pathlib import Path
-import os
 import zipfile
 
-parser = ArgumentParser()
-parser.add_argument('-i', '--input', help='Diretório onde se encontram os arquivos compactados', required=True)
-parser.add_argument('-o1', '--first-output', help='Diretório de saída da primeira extração')
-parser.add_argument('-o2', '--second-output', help='Diretório de saída da segunda extração')
+from argparse import ArgumentParser
+from pathlib import Path
 
-args = parser.parse_args()
+def extrair_arquivos(input_dir, output_dir):
+    for file in input_dir.iterdir():
+        print(f'\tExtraindo arquivo {file.name}...')
+        try:
+            with zipfile.ZipFile(file, 'r') as zip_ref:
+                zip_ref.extractall(output_dir)
+        except:
+            print(f'\t\tErro ao extrair arquivo {file.name}. Ignorando.')
 
-input_dir = args.input
+def main():
+    parser = ArgumentParser()
+    parser.add_argument('-i', '--input', help='Diretório onde se encontram os arquivos compactados', required=True)
+    parser.add_argument('-o1', '--first-output', help='Diretório de saída da primeira extração')
+    parser.add_argument('-o2', '--second-output', help='Diretório de saída da segunda extração')
+    args = parser.parse_args()
 
-home_folder = str(Path.home())
-first_output = args.first_output if args.first_output else home_folder + '\\hidroweb\\primeira-extracao'
-second_output = args.second_output if args.second_output else home_folder + '\\hidroweb\\segunda-extracao'
+    input_dir = Path(args.input)
+    home_folder = str(Path.home())
+    first_output = Path(args.first_output) if args.first_output else Path(home_folder, 'hidroweb', 'primeira-extracao')
+    second_output = Path(args.second_output) if args.second_output else Path(home_folder, 'hidroweb', 'segunda-extracao')
 
-print('Lendo arquivos localizados em {}'.format(input_dir))
+    print(f'Lendo arquivos localizados em {input_dir}')
 
-print('Iniciando primeira extração para {}...'.format(first_output))
-for file in os.listdir(input_dir):
-    print('\tExtraindo arquivo {}...'.format(file))
-    with zipfile.ZipFile(input_dir + '\\' + file, 'r') as zip_ref:
-        zip_ref.extractall(first_output)
-print('Primeira extração concluída!')
+    print(f'Iniciando primeira extração para {first_output}...')
+    extrair_arquivos(input_dir, first_output)
+    print('Primeira extração concluída!')
 
-print('Iniciando segunda extração para {}...'.format(second_output))
-for file in os.listdir(first_output):
-    print('\tExtraindo arquivo {}...'.format(file))
-    with zipfile.ZipFile(first_output + '\\' + file, 'r') as zip_ref:
-        zip_ref.extractall(second_output)
-print('Segunda extração concluída!')
+    print(f'Iniciando segunda extração para {second_output}...')
+    extrair_arquivos(first_output, second_output)
+    print('Segunda extração concluída!')
+
+if __name__ == "__main__":
+    main()
