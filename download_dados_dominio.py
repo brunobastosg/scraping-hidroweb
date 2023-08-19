@@ -7,7 +7,11 @@ import zipfile
 URL = 'https://www.snirh.gov.br/hidroweb/rest/api/documento?page=0&size=5'
 OUTPUT_FOLDER = 'dominio'
 DOMINIOS = ['bacia', 'entidade', 'estacao', 'estado', 'municipio', 'rio', 'subbacia']
-COLUNAS_IGNORADAS = ['RegistroID', 'Importado', 'Temporario', 'Removido', 'ImportadoRepetido', 'DataIns', 'DataAlt', 'RespAlt']
+COLUNAS_IGNORADAS_TODOS = ['RegistroID', 'Importado', 'Temporario', 'Removido', 'ImportadoRepetido', 'DataIns', 'DataAlt', 'RespAlt']
+COLUNAS_IGNORADAS_POR_DOMINIO = {
+    # estou ignorando essas colunas pois possuem conteúdo não estruturado, com quebras de linha, e bagunçavam o csv no final
+    'estacao': ['Descricao', 'Historico']
+}
 
 def obter_url_download():
     response = requests.get(URL)
@@ -49,8 +53,9 @@ def transformar_access_em_csv(banco_access):
     cur = conn.cursor()
 
     for dominio in DOMINIOS:
+        colunas_ignoradas_dominio = COLUNAS_IGNORADAS_POR_DOMINIO.get(dominio, [])
         sql = pd.read_sql_query('SELECT * FROM {}'.format(dominio), conn)
-        df = pd.DataFrame(sql).drop(COLUNAS_IGNORADAS, axis=1)
+        df = pd.DataFrame(sql).drop(COLUNAS_IGNORADAS_TODOS + colunas_ignoradas_dominio, axis=1)
         df.to_csv('dominio/{}.csv'.format(dominio), sep=';', index=False, encoding='utf-8-sig')
 
     cur.close()
