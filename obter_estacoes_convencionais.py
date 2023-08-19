@@ -39,6 +39,3 @@ with open('ids_estacoes_convencionais.txt', 'a') as ids_file:
             pagina_atual = pagina_atual + 1
         else:
             raise Exception(f'Erro ao obter a página {pagina_atual} dos dados de estações convencionais')
-
-with open('estacoes_convencionais.json', 'w') as json_file:
-    json.dump(dados, json_file)
