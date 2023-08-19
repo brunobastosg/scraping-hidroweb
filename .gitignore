@@ -1,7 +1,7 @@
 .venv/
+csvs_concatenados/
 downloads/
 dominio/
 primeira-extracao/
 segunda-extracao/
-downloaded.txt
-dominio.zip
+ids_estacoes_convencionais.txt
