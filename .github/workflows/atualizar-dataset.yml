@@ -131,8 +131,8 @@ jobs:
       - name: obter csv das medições dos artefatos
         uses: actions/download-artifact@v3
         with:
-          name: csvs-concatenados
-          path: csvs-concatenados
+          name: medicoes-estacoes-convencionais-concatenadas
+          path: medicoes-estacoes-convencionais-concatenadas
       - name: setup python
         uses: actions/setup-python@v4
         with:
@@ -141,7 +141,7 @@ jobs:
       - name: copiar csvs de domínio para a pasta do kaggle
         run: cp -r dominio kaggle/
       - name: copiar csvs das mediçoes para a pasta do kaggle
-        run: cp -r csvs_concatenados/* kaggle/
+        run: cp -r medicoes-estacoes-convencionais-concatenadas/* kaggle/
       - name: setar locale pt-BR
         run: |
           sudo locale-gen pt_BR.UTF-8
