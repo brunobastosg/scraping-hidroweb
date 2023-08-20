@@ -27,9 +27,9 @@ def concatenar_arquivos_csv(nome, prefixo, skiprows, usecols=None, date_columns=
         concatenated_df = concatenated_df.sort_values(by=sort_columns)
         
         print('\tGerando CSV...')
-        output_subfolder = Path(f'{output_folder}/{prefixo}')
+        output_subfolder = Path(output_folder, prefixo.lower())
         output_subfolder.mkdir(parents=True, exist_ok=True)
-        concatenated_df.to_csv(f'{output_folder}/{prefixo.lower()}/{output_filename}.csv', index=False, encoding='utf-8-sig')
+        concatenated_df.to_csv(output_subfolder / f'{output_filename}.csv', index=False, encoding='utf-8-sig')
     else:
         print(f'\tNenhum CSV de {nome} encontrado.')
 
