@@ -13,6 +13,14 @@ extension = 'csv'
 
 output_folder = 'medicoes-estacoes-convencionais-concatenadas'
 
+arquivos_com_erro_nao_tratados = []
+
+# alguns arquivos estão mal-formados, pois usam o caracter ; no meio do valor de uma célula, sem envolver o valor entre aspas, então o pandas acha que é um separador
+map_correcoes_arquivos = {
+    'ResumoDescarga_C_15564000.csv': 'eyck; fabio; robson',
+    'ResumoDescarga_C_40784000.csv': 'Sidney; Grace; Michele'
+}
+
 def concatenar_arquivos_csv(nome, prefixo, skiprows, usecols=None, date_columns=None, sort_columns=None, output_filename=None, engine='c'):
     print(nome)
     print(f'\tLendo...')
@@ -20,7 +28,26 @@ def concatenar_arquivos_csv(nome, prefixo, skiprows, usecols=None, date_columns=
     
     if len(files) > 0:
         print('\tConcatenando...')
-        dfs = [pd.read_csv(f, sep=';', skiprows=skiprows, index_col=False, dayfirst=True, parse_dates=date_columns, decimal=',', usecols=usecols, encoding='iso-8859-1', engine=engine) for f in files]
+        dfs = []
+        for f in files:
+            try:
+                df = pd.read_csv(f, sep=';', skiprows=skiprows, index_col=False, dayfirst=True, parse_dates=date_columns, decimal=',', usecols=usecols, encoding='iso-8859-1', engine=engine)
+                dfs.append(df)
+            except Exception as e:
+                print(f'\t\tErro ao ler CSV {f}: {e}')
+                nome_arquivo_sem_pasta = f.split('/')[1]
+                if map_correcoes_arquivos[nome_arquivo_sem_pasta]:
+                    print('\t\tTentando tratar o problema...')
+                    with open(f, 'r', encoding='iso-8859-1') as csv_problematico:
+                        conteudo = csv_problematico.read()
+                        conteudo = conteudo.replace(map_correcoes_arquivos[nome_arquivo_sem_pasta], map_correcoes_arquivos[nome_arquivo_sem_pasta].replace(';', ','))
+                    with open(f, 'w', encoding='iso-8859-1') as csv_consertado:
+                        csv_consertado.write(conteudo)
+                    df = pd.read_csv(f, sep=';', skiprows=skiprows, index_col=False, dayfirst=True, parse_dates=date_columns, decimal=',', usecols=usecols, encoding='iso-8859-1', engine=engine)
+                    dfs.append(df)
+                else:
+                    arquivos_com_erro_nao_tratados.append(f)
+
         concatenated_df = pd.concat(dfs)
         
         print('\tOrdenando...')
@@ -46,3 +73,7 @@ concatenar_arquivos_csv(nome='SEDIMENTOS', prefixo='sedimentos', skiprows=10, da
 concatenar_arquivos_csv(nome='VAZÕES', prefixo='vazoes', skiprows=13, date_columns=[2, 3], sort_columns=['EstacaoCodigo', 'Data', 'Hora'], output_filename='vazoes')
 
 print('CONCLUÍDO!')
+
+print()
+
+print(f'Arquivos com erro: {print(*arquivos_com_erro_nao_tratados, sep=", ")}')
