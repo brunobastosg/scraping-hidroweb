@@ -1,8 +1,8 @@
 name: atualizar-dataset
 run-name: Atualizar Dataset
-on: [push]
-  # schedule:
-  #   - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
+on:
+  schedule:
+    - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
 
 env:
   PYTHON_VERSION: '3.9'
@@ -136,7 +136,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: ${{ env.PYTHON_VERSION }}
       - run: pip install kaggle
       - name: copiar csvs de domínio para a pasta do kaggle
         run: cp -r dominio kaggle/
