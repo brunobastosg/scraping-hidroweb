@@ -85,11 +85,12 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: python extrair_medicoes_estacoes_convencionais.py -i medicoes-estacoes-convencionais -o1 primeira-extracao -o2 segunda-extracao
+      - run: zip -r segunda-extracao.zip segunda-extracao
       - name: salvar arquivos csv como artefatos
         uses: actions/upload-artifact@v3
         with:
           name: segunda-extracao
-          path: segunda-extracao
+          path: segunda-extracao.zip
 
   concatenar-medicoes-estacoes-convencionais:
     needs: extrair-medicoes-estacoes-convencionais
@@ -101,7 +102,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: segunda-extracao
-          path: segunda-extracao
+      - run: unzip segunda-extracao.zip
       - name: configurar python
         uses: actions/setup-python@v4
         with:
