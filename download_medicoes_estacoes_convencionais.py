@@ -15,7 +15,7 @@ URL = 'http://www.snirh.gov.br/hidroweb/rest/api/documento/convencionais'
 TIPO = 3
 NUMERO_LINHAS = 50
 
-pasta_destino = Path('downloads')
+pasta_destino = Path('medicoes-estacoes-convencionais')
 
 ids_documentos = None
 

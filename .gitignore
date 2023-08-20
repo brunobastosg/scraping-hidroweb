@@ -1,6 +1,6 @@
 .venv/
-csvs_concatenados/
-downloads/
+medicoes-estacoes-convencionais/
+medicoes-estacoes-convencionais-concatenadas/
 dominio/
 primeira-extracao/
 segunda-extracao/

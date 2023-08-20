@@ -11,7 +11,7 @@ input_dir = args.input
 
 extension = 'csv'
 
-output_folder = 'csvs_concatenados'
+output_folder = 'medicoes-estacoes-convencionais-concatenadas'
 
 def concatenar_arquivos_csv(nome, prefixo, skiprows, usecols=None, date_columns=None, sort_columns=None, output_filename=None, engine='c'):
     print(nome)
