@@ -152,4 +152,4 @@ jobs:
         env:
           KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
           KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
-        run: kaggle datasets version -p kaggle -m "Versão de ${{ steps.obter-mes-ano-atual.outputs.MES_ANO_ATUAL }}"
+        run: kaggle datasets version -p kaggle -r zip -m "Versão de ${{ steps.obter-mes-ano-atual.outputs.MES_ANO_ATUAL }}"
