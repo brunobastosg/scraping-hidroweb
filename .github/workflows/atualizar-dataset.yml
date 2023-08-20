@@ -67,7 +67,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: medicoes-estacoes-convencionais
-          path: downloads
+          path: medicoes-estacoes-convencionais
 
   extrair-medicoes-estacoes-convencionais:
     needs: download-medicoes-estacoes-convencionais
@@ -79,12 +79,12 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: medicoes-estacoes-convencionais
-          path: downloads
+          path: medicoes-estacoes-convencionais
       - name: configurar python
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-      - run: python extrair_medicoes_estacoes_convencionais.py -i downloads -o1 primeira-extracao -o2 segunda-extracao
+      - run: python extrair_medicoes_estacoes_convencionais.py -i medicoes-estacoes-convencionais -o1 primeira-extracao -o2 segunda-extracao
       - name: salvar arquivos csv como artefatos
         uses: actions/upload-artifact@v3
         with:
@@ -100,7 +100,7 @@ jobs:
       - name: obter arquivos csv dos artefatos
         uses: actions/download-artifact@v3
         with:
-          name: medicoes-estacoes-convencionais
+          name: segunda-extracao
           path: segunda-extracao
       - name: configurar python
         uses: actions/setup-python@v4
@@ -111,5 +111,45 @@ jobs:
       - name: salvar arquivos csv como artefatos
         uses: actions/upload-artifact@v3
         with:
+          name: medicoes-estacoes-convencionais-concatenadas
+          path: medicoes-estacoes-convencionais-concatenadas
+  
+  enviar-para-kaggle:
+    needs: [obter-dominios, concatenar-medicoes-estacoes-convencionais]
+    runs-on: ubuntu-latest
+    env:
+      LANG: "pt_BR.UTF-8"
+    steps:
+      - name: baixar código-fonte
+        uses: actions/checkout@v3
+      - name: obter csv dos domínios dos artefatos
+        uses: actions/download-artifact@v3
+        with:
+          name: dominio
+          path: dominio
+      - name: obter csv das medições dos artefatos
+        uses: actions/download-artifact@v3
+        with:
           name: csvs-concatenados
           path: csvs-concatenados
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - run: pip install kaggle
+      - name: copiar csvs de domínio para a pasta do kaggle
+        run: cp -r dominio kaggle/
+      - name: copiar csvs das mediçoes para a pasta do kaggle
+        run: cp -r csvs_concatenados/* kaggle/
+      - name: setar locale pt-BR
+        run: |
+          sudo locale-gen pt_BR.UTF-8
+          sudo update-locale LANG=pt_BR.UTF-8
+      - name: obter mês/ano atual
+        id: obter-mes-ano-atual
+        run: echo "MES_ANO_ATUAL=$(date +%B/%Y)" >> $GITHUB_OUTPUT
+      - name: enviar dataset
+        env:
+          KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+          KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+        run: kaggle datasets version -p kaggle -m "Versão de ${{ steps.obter-mes-ano-atual.outputs.MES_ANO_ATUAL }}"
