@@ -238,157 +238,560 @@
           },
           {
             "name": "Chuva01Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 1",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 1 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($)) (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva02Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 2",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 2 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva03Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 3",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 3 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva04Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 4",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 4 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva05Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 5",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 5 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva06Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 6",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 6 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva07Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 7",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 7 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva08Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 8",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 8 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva09Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 9",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 9 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva10Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 10",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 10 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva11Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 11",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 11 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva12Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 12",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 12 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva13Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 13",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 13 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva14Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 14",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 14 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva15Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 15",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 15 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva16Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 16",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 16 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva17Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 17",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 17 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva18Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 18",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 18 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva19Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 19",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 19 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva20Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 20",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 20 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva21Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 21",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 21 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva22Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 22",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 22 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva23Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 23",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 23 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva24Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 24",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 24 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva25Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 25",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 25 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva26Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 26",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 26 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva27Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 27",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 27 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva28Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 28",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 28 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva29Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 29",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 29 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva30Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 30",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 30 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
             "type": "integer"
           },
           {
             "name": "Chuva31Status",
-            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 31",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 31 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    {
+      "path": "clima.csv",
+      "description": "Armazena os registros de clima. Cada linha corresponde a um mês de leitura.",
+      "schema": {
+        "fields": [
+          {
+            "name": "EstacaoCodigo",
+            "description": "Código da estação onde foram realizadas as medições",
+            "type": "numeric"
+          },
+          {
+            "name": "NivelConsistencia",
+            "description": "Indica o nível de consistência do registro (1 = Bruto, 2 = Consistido)",
+            "type": "integer"
+          },
+          {
+            "name": "Data",
+            "description": "Mês/ano em que foram realizadas as medições",
+            "type": "datetime"
+          },
+          {
+            "name": "Hora",
+            "description": "Hora em que foram realizadas as medições",
+            "type": "datetime"
+          },
+          {
+            "name": "ParametroClima",
+            "description": "Código indicando o parâmetro climatológico medido (10 = Temperatura do Ar - Média (°C), 11 = Temperatura do Ar - Máxima (°C), 12 = Temperatura do Ar - Mínima (°C), 20 = Temperatura da Água - Média (°C), 21 = Temperatura da Água - Máxima (°C), 22 = Temperatura da Água - Mínima (°C), 30 = Temperatura do Solo - Média (°C), 31 = Temperatura do Solo - Máxima (°C), 32 = Temperatura do Solo - Mínima (°C), 40 = Anemômetro do Tanque (km/h), 41 = Anemômetro do Tanque - Leitura, 42 = Anemômetro Elevado (km/h), 43 = Anemômetro Elevado - Leitura, 50 = Evaporação - Piche (mm), 51 = Evaporímetro de Piche - Leitura, 52 = Evaporímetro de Piche - Complemento, 60 = Evaporação - Tanque (mm), 61 = Tanque Evaporimétrico - Leitura, 62 = Tanque Evaporimétrico - Complemento, 70 = Chuva - Pluviômetro (mm), 71 = Chuva - Pluviógrafo (mm), 80 = Insolação (Horas e Décimos), 90 = Umidade Relativa do Ar (%), 91 = Termômetro Seco - Leitura (°C), 92 = Termômetro Úmido - Leitura (°C), 100 = Pressão Atmosférica (mb))",
+            "type": "integer"
+          },
+          {
+            "name": "Maxima",
+            "description": "Valor máximo do parâmetro climatológico",
+            "type": "decimal"
+          },
+          {
+            "name": "Minima",
+            "description": "Valor mínimo do parâmetro climatológico",
+            "type": "decimal"
+          },
+          {
+            "name": "Media",
+            "description": "Valor médio do parâmetro climatológico",
+            "type": "decimal"
+          },
+          {
+            "name": "Total",
+            "description": "Valor total do parâmetro climatológico no mês",
+            "type": "decimal"
+          },
+          {
+            "name": "DiaMaxima",
+            "description": "Dia em que ocorreu o valor máximo do parâmetro climatológico",
+            "type": "integer"
+          },
+          {
+            "name": "DiaMinima",
+            "description": "Dia em que ocorreu o valor mínimo do parâmetro climatológico",
+            "type": "integer"
+          },
+          {
+            "name": "NumDiasDeChuva",
+            "description": "Número de dias em que ocorreu chuva",
+            "type": "integer"
+          },
+          {
+            "name": "MaximaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor do clima máximo (0 = BRANCO, 1 = Valor real,  2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "MinimaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor do clima mínimo (0 = BRANCO, 1 = Valor real,  2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "MediaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor do clima médio (0 = BRANCO, 1 = Valor real,  2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "TotalStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor do clima total (0 = BRANCO, 1 = Valor real,  2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "NumDiasDeChuvaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor do número de dias de chuva (0 = BRANCO, 1 = Valor real,  2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima01",
+            "description": "Valor da parâmetro climatológico para o dia 1 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima02",
+            "description": "Valor da parâmetro climatológico para o dia 2 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima03",
+            "description": "Valor da parâmetro climatológico para o dia 3 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima04",
+            "description": "Valor da parâmetro climatológico para o dia 4 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima05",
+            "description": "Valor da parâmetro climatológico para o dia 5 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima06",
+            "description": "Valor da parâmetro climatológico para o dia 6 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima07",
+            "description": "Valor da parâmetro climatológico para o dia 7 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima08",
+            "description": "Valor da parâmetro climatológico para o dia 8 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima09",
+            "description": "Valor da parâmetro climatológico para o dia 9 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima10",
+            "description": "Valor da parâmetro climatológico para o dia 10 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima11",
+            "description": "Valor da parâmetro climatológico para o dia 11 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima12",
+            "description": "Valor da parâmetro climatológico para o dia 12 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima13",
+            "description": "Valor da parâmetro climatológico para o dia 13 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima14",
+            "description": "Valor da parâmetro climatológico para o dia 14 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima15",
+            "description": "Valor da parâmetro climatológico para o dia 15 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima16",
+            "description": "Valor da parâmetro climatológico para o dia 16 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima17",
+            "description": "Valor da parâmetro climatológico para o dia 17 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima18",
+            "description": "Valor da parâmetro climatológico para o dia 18 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima19",
+            "description": "Valor da parâmetro climatológico para o dia 19 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima20",
+            "description": "Valor da parâmetro climatológico para o dia 20 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima21",
+            "description": "Valor da parâmetro climatológico para o dia 21 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima22",
+            "description": "Valor da parâmetro climatológico para o dia 22 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima23",
+            "description": "Valor da parâmetro climatológico para o dia 23 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima24",
+            "description": "Valor da parâmetro climatológico para o dia 24 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima25",
+            "description": "Valor da parâmetro climatológico para o dia 25 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima26",
+            "description": "Valor da parâmetro climatológico para o dia 26 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima27",
+            "description": "Valor da parâmetro climatológico para o dia 27 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima28",
+            "description": "Valor da parâmetro climatológico para o dia 28 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima29",
+            "description": "Valor da parâmetro climatológico para o dia 29 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima30",
+            "description": "Valor da parâmetro climatológico para o dia 30 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima31",
+            "description": "Valor da parâmetro climatológico para o dia 31 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Clima01Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 1 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima02Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 2 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima03Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 3 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima04Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 4 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima05Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 5 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima06Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 6 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima07Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 7 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima08Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 8 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima09Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 9 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima10Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 10 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima11Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 11 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima12Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 12 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima13Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 13 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima14Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 14 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima15Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 15 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima16Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 16 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima17Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 17 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima18Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 18 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima19Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 19 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima20Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 20 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima21Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 21 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima22Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 22 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima23Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 23 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima24Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 24 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima25Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 25 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima26Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 26 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima27Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 27 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima28Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 28 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima29Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 29 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima30Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 30 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
+            "type": "integer"
+          },
+          {
+            "name": "Clima31Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores do parâmetro climatológico no dia 31 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?))",
             "type": "integer"
           }
         ]
