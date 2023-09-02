@@ -1194,6 +1194,99 @@
           }
         ]
       }
+    },
+    {
+      "path": "curvadescarga.csv",
+      "description": "Armazena os registros de curva de descarga, com exceção da tabela Cota X Vazão.",
+      "schema": {
+        "fields": [
+          {
+            "name": "EstacaoCodigo",
+            "description": "Código da estação fluviométrica correspondente",
+            "type": "numeric"
+          },
+          {
+            "name": "NivelConsistencia",
+            "description": "Indica o nível de consistência do registro (1 = Bruto, 2 = Consistido)",
+            "type": "integer"
+          },
+          {
+            "name": "PeriodoValidadeInicio",
+            "description": "Início do período de validade da curva",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoValidadeFim",
+            "description": "Fim do período de validade da curva",
+            "type": "datetime"
+          },
+          {
+            "name": "CotaMaxima",
+            "description": "Cota máxima válida para a curva (cm)",
+            "type": "datetime"
+          },
+          {
+            "name": "CotaMinima",
+            "description": "Cota mínima válida para a curva (cm)",
+            "type": "datetime"
+          },
+          {
+            "name": "TipoCurva",
+            "description": "Indica se a curva deve ser representada por uma equação ou por uma tabela de descarga (1 = Equação, 2 = Tabela)",
+            "type": "integer"
+          },
+          {
+            "name": "NumeroCurva",
+            "description": "Número de identificação da curva. Ex.: 1/2, 3/4 etc.",
+            "type": "string"
+          },
+          {
+            "name": "TipoEquacao",
+            "description": "Indica o tipo de equação que representa a curva, no caso da curva ser representada por uma equação (1 = Potência, 2 = Linear, 3 = Parabólica, 4 = Cúbica)",
+            "type": "integer"
+          },
+          {
+            "name": "CoefA",
+            "description": "Coeficiente da equação exponencial",
+            "type": "decimal"
+          },
+          {
+            "name": "CoefH0",
+            "description": "Coeficiente da equação exponencial (cm)",
+            "type": "decimal"
+          },
+          {
+            "name": "CoefN",
+            "description": "Coeficiente da equação exponencial",
+            "type": "decimal"
+          },
+          {
+            "name": "CoefA0",
+            "description": "Coeficiente de equação polinomial (linear, parabólica ou cúbica)",
+            "type": "decimal"
+          },
+          {
+            "name": "CoefA1",
+            "description": "Coeficiente de equação polinomial (linear, parabólica ou cúbica)",
+            "type": "decimal"
+          },
+          {
+            "name": "CoefA2",
+            "description": "Coeficiente de equação polinomial (linear, parabólica ou cúbica)",
+            "type": "decimal"
+          },
+          {
+            "name": "CoefA3",
+            "description": "Coeficiente de equação polinomial (linear, parabólica ou cúbica)",
+            "type": "decimal"
+          },
+          {
+            "name": "TabelaPassoCota",
+            "description": "Valor que deve ser adicionado incrementalmente a cota mínima para a obtenção das cotas da tabela de descarga (cm)",
+            "type": "integer"
+          }
+        ]
+      }
     }
   ],
   "keywords": [
