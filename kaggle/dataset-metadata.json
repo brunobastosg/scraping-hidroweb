@@ -796,6 +796,404 @@
           }
         ]
       }
+    },
+    {
+      "path": "cotas.csv",
+      "description": "Armazena os registros de cotas. Cada linha corresponde a um mês de leitura.",
+      "schema": {
+        "fields": [
+          {
+            "name": "EstacaoCodigo",
+            "description": "Código da estação onde foram realizadas as medições",
+            "type": "numeric"
+          },
+          {
+            "name": "NivelConsistencia",
+            "description": "Indica o nível de consistência do registro (1 = Bruto, 2 = Consistido)",
+            "type": "integer"
+          },
+          {
+            "name": "Data",
+            "description": "Mês/ano em que foram realizadas as medições",
+            "type": "datetime"
+          },
+          {
+            "name": "Hora",
+            "description": "Hora em que foram realizadas as medições",
+            "type": "datetime"
+          },
+          {
+            "name": "MediaDiaria",
+            "description": "Indica se a medição é uma média diária (1) ou é instantânea (0)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoMedicaoCotas",
+            "description": "Indica como as cotas foram obtidas (1 = Escala, 2 = Linígrafo, 3 = Data logger)",
+            "type": "integer"
+          },
+          {
+            "name": "Maxima",
+            "description": "Valor máximo da cota no mês (cm)",
+            "type": "integer"
+          },
+          {
+            "name": "Minima",
+            "description": "Valor mínimo da cota no mês (cm)",
+            "type": "integer"
+          },
+          {
+            "name": "Media",
+            "description": "Valor médio da cota no mês (cm)",
+            "type": "integer"
+          },
+          {
+            "name": "DiaMaxima",
+            "description": "Dia em que ocorreu a cota máxima",
+            "type": "integer"
+          },
+          {
+            "name": "DiaMinima",
+            "description": "Dia em que ocorreu a cota mínima",
+            "type": "integer"
+          },
+          {
+            "name": "MaximaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor da cota máxima (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "MinimaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor da cota mínima (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "MediaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor da cota média (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "MediaAnual",
+            "description": "Valor médio da cota no ano (cm)",
+            "type": "integer"
+          },
+          {
+            "name": "MediaAnualStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor da cota média anual (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota01",
+            "description": "Valor da cota para o dia 1 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota02",
+            "description": "Valor da cota para o dia 2 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota03",
+            "description": "Valor da cota para o dia 3 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota04",
+            "description": "Valor da cota para o dia 4 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota05",
+            "description": "Valor da cota para o dia 5 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota06",
+            "description": "Valor da cota para o dia 6 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota07",
+            "description": "Valor da cota para o dia 7 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota08",
+            "description": "Valor da cota para o dia 8 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota09",
+            "description": "Valor da cota para o dia 9 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota10",
+            "description": "Valor da cota para o dia 10 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota11",
+            "description": "Valor da cota para o dia 11 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota12",
+            "description": "Valor da cota para o dia 12 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota13",
+            "description": "Valor da cota para o dia 13 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota14",
+            "description": "Valor da cota para o dia 14 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota15",
+            "description": "Valor da cota para o dia 15 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota16",
+            "description": "Valor da cota para o dia 16 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota17",
+            "description": "Valor da cota para o dia 17 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota18",
+            "description": "Valor da cota para o dia 18 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota19",
+            "description": "Valor da cota para o dia 19 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota20",
+            "description": "Valor da cota para o dia 20 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota21",
+            "description": "Valor da cota para o dia 21 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota22",
+            "description": "Valor da cota para o dia 22 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota23",
+            "description": "Valor da cota para o dia 23 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota24",
+            "description": "Valor da cota para o dia 24 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota25",
+            "description": "Valor da cota para o dia 25 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota26",
+            "description": "Valor da cota para o dia 26 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota27",
+            "description": "Valor da cota para o dia 27 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota28",
+            "description": "Valor da cota para o dia 28 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota29",
+            "description": "Valor da cota para o dia 29 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota30",
+            "description": "Valor da cota para o dia 30 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota31",
+            "description": "Valor da cota para o dia 31 do mês",
+            "type": "integer"
+          },
+          {
+            "name": "Cota01Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 1 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota02Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 2 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota03Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 3 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota04Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 4 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota05Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 5 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota06Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 6 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota07Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 7 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota08Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 8 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota09Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 9 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota10Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 10 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota11Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 11 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota12Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 12 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota13Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 13 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota14Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 14 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota15Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 15 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota16Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 16 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota17Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 17 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota18Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 18 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota19Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 19 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota20Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 20 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota21Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 21 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota22Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 22 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota23Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 23 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota24Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 24 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota25Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 25 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota26Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 26 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota27Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 27 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota28Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 28 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota29Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 29 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota30Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 30 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          },
+          {
+            "name": "Cota31Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade das valores das cotas no dia 31 do mês (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*),  3 = Valor duvidoso (?), 4 = Régua Seca (#), 5 = Régua Coberta (!), 6 = Rio Seco (@), 7 = Rio Cortado (/))",
+            "type": "integer"
+          }
+        ]
+      }
     }
   ],
   "keywords": [
