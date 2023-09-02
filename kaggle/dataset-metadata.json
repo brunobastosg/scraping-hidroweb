@@ -10,6 +10,391 @@
       "hasName": true
     }
   ],
+  "resources": [
+    {
+      "path": "chuvas.csv",
+      "description": "Armazena os registros de chuvas. Cada linha corresponde a um mês de leitura.",
+      "schema": {
+        "fields": [
+          {
+            "name": "EstacaoCodigo",
+            "description": "Código da estação onde foram realizadas as medições",
+            "type": "numeric"
+          },
+          {
+            "name": "NivelConsistencia",
+            "description": "Indica o nível de consistência do registro (1 = Bruto, 2 = Consistido)",
+            "type": "integer"
+          },
+          {
+            "name": "Data",
+            "description": "Mês/ano em que foram realizadas as medições",
+            "type": "datetime"
+          },
+          {
+            "name": "TipoMedicaoChuvas",
+            "description": "Indica como as chuvas foram obtidas (1 = Pluviômetro, 2 = Pluviógrafo, 3 = Data logger)",
+            "type": "integer"
+          },
+          {
+            "name": "Maxima",
+            "description": "Valor máximo da chuva no mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Total",
+            "description": "Valor total da chuva no mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "DiaMaxima",
+            "description": "Dia em que ocorreu a chuva máxima",
+            "type": "integer"
+          },
+          {
+            "name": "NumDiasDeChuva",
+            "description": "Número de dias em que ocorreu chuva no mês",
+            "type": "integer"
+          },
+          {
+            "name": "MaximaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor da chuva máxima (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
+            "type": "integer"
+          },
+          {
+            "name": "TotalStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor da chuva total (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
+            "type": "integer"
+          },
+          {
+            "name": "NumDiasDeChuvaStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor do número de dias de chuva (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
+            "type": "integer"
+          },
+          {
+            "name": "TotalAnual",
+            "description": "Valor total da chuva no ano (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "TotalAnualStatus",
+            "description": "Indica a disponibilidade, precisão e confiabilidade do valor da chuva total anual (0 = BRANCO, 1 = Valor real, 2 = Valor estimado (*), 3 = Valor duvidoso (?), 4 = Acumulado ($))",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva01",
+            "description": "Chuva total para o dia 1 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva02",
+            "description": "Chuva total para o dia 2 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva03",
+            "description": "Chuva total para o dia 3 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva04",
+            "description": "Chuva total para o dia 4 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva05",
+            "description": "Chuva total para o dia 5 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva06",
+            "description": "Chuva total para o dia 6 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva07",
+            "description": "Chuva total para o dia 7 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva08",
+            "description": "Chuva total para o dia 8 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva09",
+            "description": "Chuva total para o dia 9 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva10",
+            "description": "Chuva total para o dia 10 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva11",
+            "description": "Chuva total para o dia 11 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva12",
+            "description": "Chuva total para o dia 12 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva13",
+            "description": "Chuva total para o dia 13 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva14",
+            "description": "Chuva total para o dia 14 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva15",
+            "description": "Chuva total para o dia 15 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva16",
+            "description": "Chuva total para o dia 16 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva17",
+            "description": "Chuva total para o dia 17 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva18",
+            "description": "Chuva total para o dia 18 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva19",
+            "description": "Chuva total para o dia 19 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva20",
+            "description": "Chuva total para o dia 20 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva21",
+            "description": "Chuva total para o dia 21 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva22",
+            "description": "Chuva total para o dia 22 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva23",
+            "description": "Chuva total para o dia 23 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva24",
+            "description": "Chuva total para o dia 24 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva25",
+            "description": "Chuva total para o dia 25 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva26",
+            "description": "Chuva total para o dia 26 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva27",
+            "description": "Chuva total para o dia 27 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva28",
+            "description": "Chuva total para o dia 28 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva29",
+            "description": "Chuva total para o dia 29 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva30",
+            "description": "Chuva total para o dia 30 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva31",
+            "description": "Chuva total para o dia 31 do mês (mm)",
+            "type": "decimal"
+          },
+          {
+            "name": "Chuva01Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 1",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva02Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 2",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva03Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 3",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva04Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 4",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva05Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 5",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva06Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 6",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva07Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 7",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva08Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 8",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva09Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 9",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva10Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 10",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva11Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 11",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva12Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 12",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva13Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 13",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva14Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 14",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva15Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 15",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva16Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 16",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva17Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 17",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva18Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 18",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva19Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 19",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva20Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 20",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva21Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 21",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva22Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 22",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva23Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 23",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva24Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 24",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva25Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 25",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva26Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 26",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva27Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 27",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva28Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 28",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva29Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 29",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva30Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 30",
+            "type": "integer"
+          },
+          {
+            "name": "Chuva31Status",
+            "description": "Indica a disponibilidade, precisão e confiabilidade dos valores de chuva no dia 31",
+            "type": "integer"
+          }
+        ]
+      }
+    }
+  ],
   "keywords": [
     "brazil",
     "weather and climate",
