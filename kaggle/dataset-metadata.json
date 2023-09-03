@@ -1328,8 +1328,337 @@
           }
         ]
       }
+    },
+    {
+      "path": "dominio/estacao.csv",
+      "description": "Armazena os registros de estação.",
+      "schema": {
+        "fields": [
+          {
+            "name": "BaciaCodigo",
+            "description": "Código que identifica a bacia hidrográfica em que se encontra a estação",
+            "type": "integer"
+          },
+          {
+            "name": "SubBaciaCodigo",
+            "description": "Código que identifica a sub-bacia hidrográfica em que se encontra a estação",
+            "type": "integer"
+          },
+          {
+            "name": "RioCodigo",
+            "description": "Código que identifica o rio em que se encontra a estação",
+            "type": "integer"
+          },
+          {
+            "name": "EstadoCodigo",
+            "description": "Código que identifica o estado ou país da América do Sul em que se encontra a estação",
+            "type": "integer"
+          },
+          {
+            "name": "MunicipioCodigo",
+            "description": "Código que identifica o município em que se encontra a estação",
+            "type": "integer"
+          },
+          {
+            "name": "ResponsavelCodigo",
+            "description": "Código da entidade proprietária ou responsável pela estação",
+            "type": "integer"
+          },
+          {
+            "name": "ResponsavelUnidade",
+            "description": "Código da unidade/distrito responsável pela estação",
+            "type": "integer"
+          },
+          {
+            "name": "ResponsavelJurisdicao",
+            "description": "Código da unidade/distrito com jurisdição sobre a estação",
+            "type": "integer"
+          },
+          {
+            "name": "OperadoraCodigo",
+            "description": "Código da entidade que opera a estação",
+            "type": "integer"
+          },
+          {
+            "name": "OperadoraUnidade",
+            "description": "Código da unidade que opera a estação",
+            "type": "integer"
+          },
+          {
+            "name": "OperadoraSubUnidade",
+            "description": "Código da subunidade que opera a estação",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacao",
+            "description": "Indica o tipo de estação (1 = Fluviométrica, 2 = Pluviométrica)",
+            "type": "integer"
+          },
+          {
+            "name": "Codigo",
+            "description": "Código que identifica a estação",
+            "type": "integer"
+          },
+          {
+            "name": "Nome",
+            "description": "Nome da estação",
+            "type": "string"
+          },
+          {
+            "name": "CodigoAdicional",
+            "description": "Identificador adicional ou original da estação",
+            "type": "string"
+          },
+          {
+            "name": "Latitude",
+            "description": "Latitude da estação",
+            "type": "decimal"
+          },
+          {
+            "name": "Longitude",
+            "description": "Longitude da estação",
+            "type": "decimal"
+          },
+          {
+            "name": "Altitude",
+            "description": "Altitude da estação (m)",
+            "type": "decimal"
+          },
+          {
+            "name": "AreaDrenagem",
+            "description": "Área de drenagem associada a estação (km²)",
+            "type": "decimal"
+          },
+          {
+            "name": "TipoEstacaoEscala",
+            "description": "Indica se as cotas são medidas com escala (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoRegistradorNivel",
+            "description": "Indica se as cotas são medidas com registrador de nível (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoDescLiquida",
+            "description": "Indica que na estação são feitas medições de descarga líquida (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoSedimentos",
+            "description": "Indica que na estação são feitas medições de sedimentos (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoQualAgua",
+            "description": "Indica qua na estação são feitas medições de qualidade da água (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoPluviometro",
+            "description": "Indica se os totais pluviométricos são medidos com pluviômetro (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoRegistradorChuva",
+            "description": "Indica se os totais pluviométricos são medidos com registrador de chuva (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoTanqueEvapo",
+            "description": "Indica que na estação são feitas medições de evaporação (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoClimatologica",
+            "description": "Indica que na estação são feitas medições de parâmetros climatológicos (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoPiezometria",
+            "description": "Indica que na estação são feitas medições piezométricas (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoEstacaoTelemetrica",
+            "description": "Indica que a estação é telemétrica (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "PeriodoEscalaInicio",
+            "description": "Período de observação - Escala - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoEscalaFim",
+            "description": "Período de observação - Escala - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoRegistradorNivelInicio",
+            "description": "Período de observação - Registrador de nível - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoRegistradorNivelFim",
+            "description": "Período de observação - Registrador de nível - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoDescLiquidaInicio",
+            "description": "Período de observação - Descarga líquida - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoDescLiquidaFim",
+            "description": "Período de observação - Descarga líquida - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoSedimentosInicio",
+            "description": "Período de observação - Sedimentos - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoSedimentosFim",
+            "description": "Período de observação - Sedimentos - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoQualAguaInicio",
+            "description": "Período de observação - Qualidade da água - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoQualAguaFim",
+            "description": "Período de observação - Qualidade da água - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoPluviometroInicio",
+            "description": "Período de observação - Pluviômetro - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoPluviometroFim",
+            "description": "Período de observação - Pluviômetro - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoRegistradorChuvaInicio",
+            "description": "Período de observação - Registrador de chuva - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoRegistradorChuvaFim",
+            "description": "Período de observação - Registrador de chuva - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoTanqueEvapoInicio",
+            "description": "Período de observação - Tanque evaporimétrico - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoTanqueEvapoFim",
+            "description": "Período de observação - Tanque evaporimétrico - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoClimatologicaInicio",
+            "description": "Período de observação - Climatológica - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoClimatologicaFim",
+            "description": "Período de observação - Climatológica - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoPiezometriaInicio",
+            "description": "Período de observação - Piezometria - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoPiezometriaFim",
+            "description": "Período de observação - Piezometria - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoTelemetricaInicio",
+            "description": "Período de observação - Telemétrica - Início",
+            "type": "datetime"
+          },
+          {
+            "name": "PeriodoTelemetricaFim",
+            "description": "Período de observação - Telemétrica - Fim",
+            "type": "datetime"
+          },
+          {
+            "name": "TipoRedeBasica",
+            "description": "Tipo de rede - Básica (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeEnergetica",
+            "description": "Tipo de rede - Energética (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeNavegacao",
+            "description": "Tipo de rede - Navegação (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeCursoDagua",
+            "description": "Tipo de rede - Curso d'água (0 = Não, 1 = Manancial/Nascente, 2 = Curso principal, 3 = Afluente, 4 = Subafluente, 5 = Outros afluentes, 6 = Galeria pluvial, 7 = Esgoto doméstico, 8 = Esgoto industrial, 9 = Outras)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeEstrategica",
+            "description": "Tipo de rede - Estratégica (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeCaptacao",
+            "description": "Tipo de rede - Captação (0 = Não, 1 = Uso doméstico, 2 = Uso industrial, 3 = Uso para irrigação, 4 = Uso para recreação, 5 = Uso para piscicultura, 6 = Uso para geração, 7 = Uso geral)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeSedimentos",
+            "description": "Tipo de rede - Sedimentos (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeQualAgua",
+            "description": "Tipo de rede - Qualidade da água (0 = Não, 1 = Especial, 2 = Água doce classe 1, 3 = Água doce classe 2, 4 = Água doce classe 3, 5 = Água doce classe 4, 6 = Água salgada (1), 7 = Água salgada (2), 8 = Água salobra (1), 9 = Água salobra (2), 10 = Sem classificação)",
+            "type": "integer"
+          },
+          {
+            "name": "TipoRedeClasseVazao",
+            "description": "Tipo de rede - Classe de vazão (0 = Não, 1 = Vazão observada, 2 = Vazão natural, 3 = Vazão equivalente, 4 = Vazão turbinada, 5 = Vazão vertida, 6 = Vazão afluente, 7 = Vazão de fundo)",
+            "type": "integer"
+          },
+          {
+            "name": "UltimaAtualizacao",
+            "description": "Data da última atualização dos dados da estação",
+            "type": "datetime"
+          },
+          {
+            "name": "Operando",
+            "description": "Indica se a estação ainda está operando (0 = Não, 1 = Sim)",
+            "type": "integer"
+          },
+          {
+            "name": "NumImagens",
+            "description": "Número de imagens associadas a estação",
+            "type": "integer"
+          }
+        ]
+      }
     }
   ],
+  "estacao": "NumImagens",
   "keywords": [
     "brazil",
     "weather and climate",
