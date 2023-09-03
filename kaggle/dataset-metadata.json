@@ -12,7 +12,7 @@
   ],
   "resources": [
     {
-      "path": "chuvas.csv",
+      "path": "chuvas/chuvas.csv",
       "description": "Armazena os registros de chuvas. Cada linha corresponde a um mês de leitura.",
       "schema": {
         "fields": [
@@ -395,7 +395,7 @@
       }
     },
     {
-      "path": "clima.csv",
+      "path": "clima/clima.csv",
       "description": "Armazena os registros de clima. Cada linha corresponde a um mês de leitura.",
       "schema": {
         "fields": [
@@ -798,7 +798,7 @@
       }
     },
     {
-      "path": "cotas.csv",
+      "path": "cotas/cotas.csv",
       "description": "Armazena os registros de cotas. Cada linha corresponde a um mês de leitura.",
       "schema": {
         "fields": [
@@ -1196,7 +1196,7 @@
       }
     },
     {
-      "path": "curvadescarga.csv",
+      "path": "curvadescarga/curvadescarga.csv",
       "description": "Armazena os registros de curva de descarga, com exceção da tabela Cota X Vazão.",
       "schema": {
         "fields": [
