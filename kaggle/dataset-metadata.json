@@ -1656,9 +1656,36 @@
           }
         ]
       }
+    },
+    {
+      "path": "dominio/estado.csv",
+      "description": "Armazena os registros de estado.",
+      "schema": {
+        "fields": [
+          {
+            "name": "Codigo",
+            "description": "Código que identifica o estado ou país da América do Sul",
+            "type": "integer"
+          },
+          {
+            "name": "CodigoIBGE",
+            "description": "Código do estado segundo o IBGE",
+            "type": "integer"
+          },
+          {
+            "name": "Sigla",
+            "description": "Sigla do estado",
+            "type": "string"
+          },
+          {
+            "name": "Nome",
+            "description": "Nome do estado ou país da América do Sul",
+            "type": "string"
+          }
+        ]
+      }
     }
   ],
-  "estacao": "NumImagens",
   "keywords": [
     "brazil",
     "weather and climate",
