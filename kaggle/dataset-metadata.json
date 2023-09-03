@@ -1773,6 +1773,89 @@
           }
         ]
       }
+    },
+    {
+      "path": "perfiltransversal/perfiltransversal.csv",
+      "description": "Armazena os registros de perfil transversal, com exceção das verticais.",
+      "schema": {
+        "fields": [
+          {
+            "name": "EstacaoCodigo",
+            "description": "Código da estação onde foram realizadas as medições",
+            "type": "numeric"
+          },
+          {
+            "name": "NivelConsistencia",
+            "description": "Indica o nível de consistência do registro (1 = Bruto, 2 = Consistido)",
+            "type": "integer"
+          },
+          {
+            "name": "Data",
+            "description": "Dia em que foram realizadas as medições",
+            "type": "datetime"
+          },
+          {
+            "name": "Hora",
+            "description": "Hora inicial das medições",
+            "type": "datetime"
+          },
+          {
+            "name": "NumLevantamento",
+            "description": "Número do levantamento do perfil transversal",
+            "type": "integer"
+          },
+          {
+            "name": "TipoSecao",
+            "description": "Tipo de seção (1 = Régua, 2 = Medição)",
+            "type": "integer"
+          },
+          {
+            "name": "NumVerticais",
+            "description": "Número de verticais medidas",
+            "type": "integer"
+          },
+          {
+            "name": "DistanciaPIPF",
+            "description": "Distância (m) entre o ponto inicial PI) e final (PF) da medição de perfil. Obs.: PI está localizado na margem esquerda e PF na margem direita.",
+            "type": "decimal"
+          },
+          {
+            "name": "EixoXDistMaxima",
+            "description": "Eixo X - Distância máxima (m)",
+            "type": "decimal"
+          },
+          {
+            "name": "EixoXDistMinima",
+            "description": "Eixo X - Distância mínima (m)",
+            "type": "decimal"
+          },
+          {
+            "name": "EixoYCotaMaxima",
+            "description": "Eixo Y - Cota máxima (cm)",
+            "type": "integer"
+          },
+          {
+            "name": "EixoYCotaMinima",
+            "description": "Eixo Y - Cota mínima (cm)",
+            "type": "integer"
+          },
+          {
+            "name": "ElmGeomPassoCota",
+            "description": "Desconhecido",
+            "type": "string"
+          },
+          {
+            "name": "Observacoes",
+            "description": "Observações sobre a medição",
+            "type": "string"
+          },
+          {
+            "name": "Verticais",
+            "description": "Desconhecido",
+            "type": "string"
+          }
+        ]
+      }
     }
   ],
   "keywords": [
