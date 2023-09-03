@@ -1287,6 +1287,24 @@
           }
         ]
       }
+    },
+    {
+      "path": "dominio/bacia.csv",
+      "description": "Armazena os registros de bacia.",
+      "schema": {
+        "fields": [
+          {
+            "name": "Codigo",
+            "description": "Código que identifica a bacia hidrográfica",
+            "type": "numeric"
+          },
+          {
+            "name": "Nome",
+            "description": "Nome da bacia hidrográfica",
+            "type": "string"
+          }
+        ]
+      }
     }
   ],
   "keywords": [
