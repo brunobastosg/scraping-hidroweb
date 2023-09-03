@@ -1712,6 +1712,39 @@
           }
         ]
       }
+    },
+    {
+      "path": "dominio/rio.csv",
+      "description": "Armazena os registros de rio.",
+      "schema": {
+        "fields": [
+          {
+            "name": "BaciaCodigo",
+            "description": "Código que identifica a bacia hidrográfica associada",
+            "type": "integer"
+          },
+          {
+            "name": "SubBaciaCodigo",
+            "description": "Código que identifica a sub-bacia hidrográfica associada",
+            "type": "integer"
+          },
+          {
+            "name": "Codigo",
+            "description": "Código que identifica o rio",
+            "type": "integer"
+          },
+          {
+            "name": "Nome",
+            "description": "Nome do rio",
+            "type": "string"
+          },
+          {
+            "name": "Jurisdicao",
+            "description": "Jurisdição do rio (1 = Federal, 2 = Estadual, 3 = Indefinido)",
+            "type": "integer"
+          }
+        ]
+      }
     }
   ],
   "keywords": [
