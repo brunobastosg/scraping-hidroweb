@@ -1684,6 +1684,34 @@
           }
         ]
       }
+    },
+    {
+      "path": "dominio/municipio.csv",
+      "description": "Armazena os registros de município.",
+      "schema": {
+        "fields": [
+          {
+            "name": "EstadoCodigo",
+            "description": "Código que identifica o estado ou país da América do Sul associado",
+            "type": "integer"
+          },
+          {
+            "name": "Codigo",
+            "description": "Código que identifica o município",
+            "type": "integer"
+          },
+          {
+            "name": "CodigoIBGE",
+            "description": "Código do município segundo o IBGE",
+            "type": "integer"
+          },
+          {
+            "name": "Nome",
+            "description": "Nome do município",
+            "type": "string"
+          }
+        ]
+      }
     }
   ],
   "keywords": [
