@@ -1305,6 +1305,29 @@
           }
         ]
       }
+    },
+    {
+      "path": "dominio/entidade.csv",
+      "description": "Armazena os registros de entidade.",
+      "schema": {
+        "fields": [
+          {
+            "name": "Codigo",
+            "description": "Código da entidade responsável ou que opera um conjunto de estações",
+            "type": "numeric"
+          },
+          {
+            "name": "Sigla",
+            "description": "Sigla da entidade",
+            "type": "string"
+          },
+          {
+            "name": "Nome",
+            "description": "Nome da entidade",
+            "type": "string"
+          }
+        ]
+      }
     }
   ],
   "keywords": [
