@@ -1,69 +1,72 @@
-import pandas as pd
-import pyodbc
-import requests
-import tempfile
-import zipfile
+from functools import partial
+from pathlib import Path
 
-URL = 'https://www.snirh.gov.br/hidroweb/rest/api/documento?page=0&size=5'
-OUTPUT_FOLDER = 'dominio'
-DOMINIOS = ['bacia', 'entidade', 'estacao', 'estado', 'municipio', 'rio', 'subbacia']
-COLUNAS_IGNORADAS_TODOS = ['RegistroID', 'Importado', 'Temporario', 'Removido', 'ImportadoRepetido', 'DataIns', 'DataAlt', 'RespAlt']
-COLUNAS_IGNORADAS_POR_DOMINIO = {
-    # estou ignorando essas colunas pois possuem conteúdo não estruturado, com quebras de linha, e bagunçavam o csv no final
-    'estacao': ['Descricao', 'Historico']
+import pandas as pd
+import zeep
+
+WSDL = 'https://telemetriaws1.ana.gov.br/ServiceANA.asmx?wsdl'
+
+OUTPUT_FOLDER = Path('dominio')
+OUTPUT_FOLDER.mkdir(parents=True, exist_ok=True)
+
+client = zeep.Client(wsdl=WSDL)
+
+DOMINIOS = {
+  'baciaSubBacia': partial(client.service.HidroBaciaSubBacia, codBacia='', codSubBacia=''),
+  'rio': partial(client.service.HidroRio, codRio=''),
+  'estado': partial(client.service.HidroEstado, codUf=''),
+  'municipio': partial(client.service.HidroMunicipio, codMunicipio=''),
+  'entidade': partial(client.service.HidroEntidades, codEntidade=''),
+  'estacao': partial(client.service.ListaEstacoesTelemetricas, statusEstacoes='', origem='')
 }
 
-def obter_url_download():
-    response = requests.get(URL)
-    conteudo = response.json()
-    id = None
-    for item in conteudo['content']:
-        if item['nome'] == 'Inventario.zip':
-            id = item['id']
-            break
-    if id is None:
-        raise Exception('URL para download do Inventario.zip não encontrada')
-    return f'https://www.snirh.gov.br/hidroweb/rest/api/documento/download?documentos={id}'
+def separar_bacias_de_subbacias(bacias_subbacias):
+  cod_bacias = set()
+  bacias = []
+  subbacias = []
+  for bacia_subbacia in bacias_subbacias:
+    if bacia_subbacia['codBacia'] not in cod_bacias:
+      bacias.append({
+        'codBacia': bacia_subbacia['codBacia'],
+        'nmBacia': bacia_subbacia['nmBacia']
+      })
+      cod_bacias.add(bacia_subbacia['codBacia'])
 
-def obter_driver():
-    driver = [x for x in pyodbc.drivers() if x.startswith('Microsoft Access Driver')]
-    if driver:
-        return driver[0]
-    else:
-        raise Exception('Driver MS Access não encontrado')
+    subbacias.append({
+      'codBacia': bacia_subbacia['codBacia'],
+      'codSubBacia': bacia_subbacia['codSubBacia'],
+      'nmSubBacia': bacia_subbacia['nmSubBacia']
+    })
+  
+  return {
+    'bacia': bacias,
+    'subbacia': subbacias
+  }
 
-def efetuar_download():
-    url_download = obter_url_download()
-    response = requests.get(url_download)
-    tmp = tempfile.TemporaryFile()
-    tmp.write(response.content)
-    return tmp
+POS_PROCESSAMENTO = {
+  'baciaSubBacia': separar_bacias_de_subbacias
+}
 
-def obter_banco_access():
-    with efetuar_download() as tmp:
-        access_db = None
-        with zipfile.ZipFile(tmp, 'r') as zip:
-            access_db = zip.namelist()[0]
-            zip.extractall(OUTPUT_FOLDER)
-    return access_db
-
-def transformar_access_em_csv(banco_access):
-    driver = obter_driver()
-    conn = pyodbc.connect('DRIVER={};DBQ={}/{}'.format(driver, OUTPUT_FOLDER, banco_access))
-    cur = conn.cursor()
-
-    for dominio in DOMINIOS:
-        colunas_ignoradas_dominio = COLUNAS_IGNORADAS_POR_DOMINIO.get(dominio, [])
-        sql = pd.read_sql_query('SELECT * FROM {}'.format(dominio), conn)
-        df = pd.DataFrame(sql).drop(COLUNAS_IGNORADAS_TODOS + colunas_ignoradas_dominio, axis=1)
-        df.to_csv('dominio/{}.csv'.format(dominio), sep=';', index=False, encoding='utf-8-sig')
-
-    cur.close()
-    conn.close()
+def transformar_para_csv(dados, nome_arquivo):
+  df = pd.DataFrame(dados)
+  df.to_csv(OUTPUT_FOLDER / f'{nome_arquivo}.csv', sep=';', index=False, encoding='utf-8-sig')
 
 def main():
-    banco_access = obter_banco_access()
-    transformar_access_em_csv(banco_access)
+  for dominio in DOMINIOS:
+    dados = []
+    res = DOMINIOS[dominio]()
+    for item in res._value_1._value_1:
+      dado = {}
+      for key in item['Table']:
+        dado[key] = item['Table'][key]
+      dados.append(dado)
 
-if __name__ == "__main__":
+    if dominio in POS_PROCESSAMENTO:
+      dados_pos_processados = POS_PROCESSAMENTO[dominio](dados)
+      for nome in dados_pos_processados:
+        transformar_para_csv(dados_pos_processados[nome], nome)
+    else:
+      transformar_para_csv(dados, dominio)
+
+if __name__ == '__main__':
     main()
