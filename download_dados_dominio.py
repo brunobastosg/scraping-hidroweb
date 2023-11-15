@@ -4,6 +4,8 @@ from pathlib import Path
 import pandas as pd
 import zeep
 
+# LISTA DOS SERVIÇOS SOAP:https://dadosabertos.ana.gov.br/search?groupIds=51e4bfdcbaaf4b01b9c0806be3e26fa8
+
 WSDL = 'https://telemetriaws1.ana.gov.br/ServiceANA.asmx?wsdl'
 
 OUTPUT_FOLDER = Path('dominio')
@@ -37,7 +39,7 @@ def separar_bacias_de_subbacias(bacias_subbacias):
       'codSubBacia': bacia_subbacia['codSubBacia'],
       'nmSubBacia': bacia_subbacia['nmSubBacia']
     })
-  
+
   return {
     'bacia': bacias,
     'subbacia': subbacias
