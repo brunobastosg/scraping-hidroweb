@@ -1,8 +1,8 @@
 name: atualizar-dataset
 run-name: Atualizar Dataset
-on: push
-  # schedule:
-  #   - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
+on:
+  schedule:
+    - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
 
 env:
   PYTHON_VERSION: '3.9'
@@ -13,9 +13,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: baixar código-fonte
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: configurar python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
@@ -24,7 +24,7 @@ jobs:
         run: choco install msaccess2010-redist-x64 -y
       - run: python download_dados_dominio.py
       - name: salvar arquivos csv como artefatos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dominio
           path: dominio/*.csv
@@ -33,16 +33,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: baixar código-fonte
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: configurar python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
       - run: pip install -r requirements.txt
       - run: python obter_estacoes_convencionais.py
       - name: salvar arquivos csv como artefatos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: estacoes-convencionais
           path: ids_estacoes_convencionais.txt
@@ -52,19 +52,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: baixar código-fonte
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: obter arquivos csv dos artefatos
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: estacoes-convencionais
       - name: configurar python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: pip install -r requirements.txt
       - run: python download_medicoes_estacoes_convencionais.py
       - name: salvar arquivos zip como artefatos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: medicoes-estacoes-convencionais
           path: medicoes-estacoes-convencionais
@@ -74,20 +74,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: baixar código-fonte
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: obter arquivos zip dos artefatos
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: medicoes-estacoes-convencionais
           path: medicoes-estacoes-convencionais
       - name: configurar python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: python extrair_medicoes_estacoes_convencionais.py -i medicoes-estacoes-convencionais -o1 primeira-extracao -o2 segunda-extracao
       - run: zip -r segunda-extracao.zip segunda-extracao
       - name: salvar arquivos csv como artefatos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: segunda-extracao
           path: segunda-extracao.zip
@@ -97,20 +97,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: baixar código-fonte
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: obter arquivos csv dos artefatos
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: segunda-extracao
       - run: unzip segunda-extracao.zip
       - name: configurar python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: pip install -r requirements.txt
       - run: python concatenar_medicoes_estacoes_convencionais.py -i segunda-extracao
       - name: salvar arquivos csv como artefatos
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: medicoes-estacoes-convencionais-concatenadas
           path: medicoes-estacoes-convencionais-concatenadas
@@ -122,19 +122,19 @@ jobs:
       LANG: "pt_BR.UTF-8"
     steps:
       - name: baixar código-fonte
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: obter csv dos domínios dos artefatos
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: dominio
           path: dominio
       - name: obter csv das medições dos artefatos
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: medicoes-estacoes-convencionais-concatenadas
           path: medicoes-estacoes-convencionais-concatenadas
       - name: setup python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: pip install kaggle
