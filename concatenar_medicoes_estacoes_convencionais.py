@@ -18,7 +18,8 @@ arquivos_com_erro_nao_tratados = []
 # alguns arquivos estão mal-formados, pois usam o caracter ; no meio do valor de uma célula, sem envolver o valor entre aspas, então o pandas acha que é um separador
 map_correcoes_arquivos = {
     'ResumoDescarga_C_15564000.csv': 'eyck; fabio; robson',
-    'ResumoDescarga_C_40784000.csv': 'Sidney; Grace; Michele'
+    'ResumoDescarga_C_40784000.csv': 'Sidney; Grace; Michele',
+    'ResumoDescarga_C_14845000.csv': 'Rodolfo Oliveira; Guilherme Costa'
 }
 
 def concatenar_arquivos_csv(nome, prefixo, skiprows, usecols=None, date_columns=None, sort_columns=None, output_filename=None, engine='c'):
