@@ -1,6 +1,7 @@
 import pandas as pd
 import pyodbc
 import requests
+import sqlalchemy as sa
 import tempfile
 import zipfile
 
@@ -49,21 +50,21 @@ def obter_banco_access():
 
 def transformar_access_em_csv(banco_access):
     driver = obter_driver()
-    conn = pyodbc.connect('DRIVER={};DBQ={}/{}'.format(driver, OUTPUT_FOLDER, banco_access))
-    cur = conn.cursor()
+    connection_url = sa.engine.URL.create(
+        'access+pyodbc',
+        query={'odbc_connect': f'DRIVER={driver};DBQ={OUTPUT_FOLDER}/{banco_access}'}
+    )
+    engine = sa.create_engine(connection_url)
 
     for dominio in DOMINIOS:
         colunas_ignoradas_dominio = COLUNAS_IGNORADAS_POR_DOMINIO.get(dominio, [])
-        sql = pd.read_sql_query('SELECT * FROM {}'.format(dominio), conn)
+        sql = pd.read_sql_query(f'SELECT * FROM {dominio}', engine)
         df = pd.DataFrame(sql).drop(COLUNAS_IGNORADAS_TODOS + colunas_ignoradas_dominio, axis=1)
-        df.to_csv('dominio/{}.csv'.format(dominio), sep=';', index=False, encoding='utf-8-sig')
-
-    cur.close()
-    conn.close()
+        df.to_csv(f'dominio/{dominio}.csv', sep=';', index=False, encoding='utf-8-sig')
 
 def main():
     banco_access = obter_banco_access()
     transformar_access_em_csv(banco_access)
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
