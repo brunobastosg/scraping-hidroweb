@@ -8,7 +8,7 @@ O objetivo deste script é efetuar o download das séries históricas de todas a
 
 ## Requisitos
 
-* Python 3.12 (obrigatório)
+* Python 3.11 (obrigatório)
 * [pip](https://pypi.org/project/pip/) (desejável)
 * Driver do MS Access (https://www.microsoft.com/en-US/download/details.aspx?id=13255) (apenas para Windows)
 * [mdbtools](https://github.com/mdbtools/mdbtools) (apenas para Linux ou MacOS)
