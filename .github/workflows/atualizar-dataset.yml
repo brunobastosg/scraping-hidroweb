@@ -1,11 +1,11 @@
 name: atualizar-dataset
 run-name: Atualizar Dataset
-on: push
-  # schedule:
-  #   - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
+on:
+  schedule:
+    - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
 
 env:
-  PYTHON_VERSION: '3.10'
+  PYTHON_VERSION: '3.12'
 
 jobs:
   obter-dominios:
@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
-      - run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt -r requirements-windows.txt
       - name: instalar driver do microsoft access
         run: choco install access2016runtime -y
       - run: python download_dados_dominio.py

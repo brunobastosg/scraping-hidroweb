@@ -1,0 +1,6 @@
+greenlet==3.0.3
+pyodbc==5.1.0
+pywin32==306
+SQLAlchemy==2.0.31
+sqlalchemy-access==2.0.2
+typing_extensions==4.12.2

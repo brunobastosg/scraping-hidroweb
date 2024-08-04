@@ -5,6 +5,7 @@ import sqlalchemy as sa
 import tempfile
 import zipfile
 
+# FIXME: essa URL agora retorna 401 se não passar o token, talvez tenha que alterar pra usar o BeautifulSoup
 URL = 'https://www.snirh.gov.br/hidroweb/rest/api/documento?page=0&size=5'
 OUTPUT_FOLDER = 'dominio'
 DOMINIOS = ['bacia', 'entidade', 'estacao', 'estado', 'municipio', 'rio', 'subbacia']
