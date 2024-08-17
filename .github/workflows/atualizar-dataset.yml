@@ -1,8 +1,8 @@
 name: atualizar-dataset
 run-name: Atualizar Dataset
-on:
-  schedule:
-    - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
+on: push
+  # schedule:
+  #   - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
 
 env:
   PYTHON_VERSION: '3.12'
@@ -19,6 +19,10 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: 'pip'
+      - name: baixar chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          install-chromedriver: true
       - run: pip install -r requirements.txt -r requirements-windows.txt
       - name: instalar driver do microsoft access
         run: choco install access2016runtime -y
