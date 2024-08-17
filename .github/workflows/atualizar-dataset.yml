@@ -1,8 +1,8 @@
 name: atualizar-dataset
 run-name: Atualizar Dataset
-on: push
-  # schedule:
-  #   - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
+on:
+  schedule:
+    - cron: "0 10 1 * *" # no primeiro dia do mês às 10hs UTC
 
 env:
   PYTHON_VERSION: '3.12'
